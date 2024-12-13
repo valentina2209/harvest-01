@@ -25,22 +25,18 @@ body {
     margin: 0;
     padding: 0;
   }
-  
-  address {
-    font-style: normal;
-  }
-  
+ 
   img {
     display: block;
     max-width: 100%;
-    height: auto;
+    /* height: auto; */
   }
   
   button {
     cursor: pointer;
   }
 
-/* Mobile style */
+
 .container{
     min-width: 320px;
     max-width: 375px;
@@ -49,6 +45,20 @@ body {
     margin: 0 auto;
 
 }
+@media screen and (min-width: 768px) {
+    .container {
+      max-width: 768px;
+    } 
+}
+  
+@media screen and (min-width: 1280px) {
+    .container {
+      max-width: 1280px;
+      padding: 0 15px;  
+    }
+}
+
+/* Mobile style */
 .contacts{
     background: #576f35;
     padding: 80px 20px;
@@ -77,14 +87,21 @@ body {
     margin-bottom: 40px;
 }
 
-.form{
+
+/* Загальний стиль форми */
+
+.form-section {
+    background: #fbfbfb;
+    margin: 0 auto;
     border-radius: 30px;
     padding: 40px 20px;
     max-width: 335px;
-    background: #fbfbfb;
     margin-bottom: 80px;
-}
-.form-title{
+  }
+  
+  /* Стиль описової частини */
+  
+  .form-description {
     font-weight: 600;
     font-size: 28px;
     line-height: 1;
@@ -92,71 +109,94 @@ body {
     text-transform: uppercase;
     color: #141414;
     margin-bottom: 40px;
-}
-.accsent-from{
+  }
+  
+  .form-description h2 {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .form-description .highlight {
     color: #7a3145;
-}
-.accsent-form{
+  }
+  
+  .form-description .accsent {
     color: #576f35;
+  }
+  
+  /* Загальний стиль для всіх input та textarea */
+
+.contact-form{
+    display: flex;
+    flex-direction: column; 
+    gap: 16px;
 }
 
-.form-overlay{
-    border: 1px solid #858585;
+.input-name, 
+.input-email{
+    width: 100%;
+    padding: 14px; 
+    font-size: 16px;
+    border: 1px solid #858585; 
+    outline: none;
     border-radius: 30px;
-    padding: 14px 220px 14px 16px; 
-    max-width: 295px;
-    height: 48px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.42857;
-    text-align: center;
-    color: #141414;
-    margin-bottom: 16px;
-}
-.form-input{
-    border: none;
-    
-}
-input::placeholder {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.42857;
-    
-    color: #141414;
-}
-textarea::placeholder{
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.42857;
-    color: #141414;
+    transition: border-color 0.3s ease;
+  }
+  
 
-}
-.form-overlay-field{
+.input-email:placeholder-shown {
+    border-color: #858585; 
+  }
+  
+  
+  .input-email:focus:placeholder-shown {
+    border-color: #858585; 
+  }
+  
+  
+  .input-email:focus:valid {
+    border-color: #3cbc81; /* Зелений бордер */
+  }
+  
+ 
+  .input-email:focus:invalid {
+    border-color: #E74A3B; /* Червоний бордер */
+  }
+  
+ 
+  .input-email:invalid:placeholder-shown {
+    border-color: #858585; 
+  } 
+
+
+ 
+ .input-comment{
     border: 1px solid #858585;
     border-radius: 15px;
-    padding: 14px 219px 59px 16px;
-    max-width: 295px;
-    height: 92px;
-    margin-bottom: 20px;
-}
-.form-message{
-    border: none;
-}
-
-.form-submit{
-    border-radius: 30px;
-    border: inherit;
-    padding: 16px 100px;
-    max-width: 295px;
-    height: 52px; 
-    background: #7a3145;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.11111;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    color: #fbfbfb;
-}
+    width: 100%;
+    padding: 14px;
+    outline: none;
+ }
+  
+  /* Кнопка */
+   .submit-button {
+        border-radius: 30px;
+        border: inherit;
+        width: 100%;
+        padding: 14px; 
+        background: #7a3145;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.11111;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        color: #fbfbfb;
+  }
+  
+  .submit-button:hover {
+    background-color: #d4bfc4;
+  }
+ 
 .social{
     border-radius: 30px;
     padding: 40px 20px;
@@ -166,10 +206,8 @@ textarea::placeholder{
 }
 .social-img{
     border-radius: 15px;
-    width: 295px;
-    height: 272px;
     margin-bottom: 20px;
-}
+} 
 .social-text{
     font-weight: 700;
     font-size: 14px;
@@ -180,9 +218,15 @@ textarea::placeholder{
 .social-list{
     width: 295px;
     height: 48px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px; 
+    list-style: none;
+    padding: 0;
 }
 .social-item{
-    display: inline-block;
+    
     padding-bottom: 8px;
     font-weight: 600;
     font-size: 18px;
@@ -191,3 +235,164 @@ textarea::placeholder{
     text-transform: uppercase;
     color: #fbfbfb;
 }
+  .social-item:not(:last-child)::after {
+    content: " /"; 
+    margin-left: 8px; 
+  }
+/* Tablet style */
+
+@media only screen and (min-width: 768px) {
+    .contacts{
+        width: 768px;
+        padding: 100px 64px;
+    }
+    .container {
+      max-width: 640px;
+      
+    }
+    .contacts-title{
+        font-size: 64px;
+        line-height: 1;
+        margin-bottom: 24px;
+    }
+    .contacts-text{
+        font-size: 16px;
+        line-height: 1.25;
+        color: #fbfbfb;
+        margin-bottom: 52px;
+    } 
+    
+    .form-section {
+        padding: 72px 100px;
+        max-width: 640px;
+      
+      }
+      .form-description {
+        
+        font-size: 32px;
+        line-height: 1;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        color: #141414;
+        margin-bottom: 52px;
+      }
+
+      .contact-form{
+        display: flex;
+        flex-direction: column; 
+        gap: 24px;
+    }
+   
+    .input-name, 
+    .input-email{
+    padding: 16px; 
+  }
+  .input-comment{
+    padding: 16px;
+   
+ }
+ .submit-button {
+    padding: 16px; 
+    
+}
+
+.submit-button:hover {
+background-color: #d4bfc4;
+}
+
+.social{
+    
+    padding: 52px;
+    max-width: 640px;
+    height: 528px;
+   
+}
+.social-img{
+    max-width: 100%;
+    margin-bottom: 52px;
+} 
+.social-text{
+    font-size: 16px;
+    line-height: 1.25;
+    
+}
+.social-list{
+    display: flex;
+    /* gap: 31px; */
+    width: 492px;
+   
+}
+.social-list{
+    display: flex;
+    gap: 12px; 
+    
+}
+
+  .social-item:not(:last-child)::after {
+    content: " /"; 
+    margin-left: 12px; 
+  }
+}
+
+/* Desktop style */
+
+
+@media only screen and (min-width: 1280px) {
+
+    .contacts{
+        width: 1280px;
+        padding: 100px;
+    }
+    .container {
+      max-width: 1080px;
+      
+    }
+   .form-section{
+    padding: 52px 48px;
+    margin: 0;
+   }
+    .flex {
+        max-width: 1080px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: row;
+        gap: 32px;
+    }
+      .contact-form{
+        display: flex;
+        gap: 24px;
+        max-width: 524px;
+       
+        }
+        .social{
+            padding: 52px 48px;
+            /* max-width: 524px;  */
+        }
+        .social-img{
+            max-width: 100%;
+            margin-bottom: 80px;
+        } 
+        .social-list{
+            width: 386px;
+            height: 56px;
+          
+     
+        }
+        .social-item:not(:last-child)::after {
+            content: " /"; 
+            margin-left: 16px; 
+          } 
+}
+  
+
+
+
+
+
+  
+  
+   
+ 
+
+ 

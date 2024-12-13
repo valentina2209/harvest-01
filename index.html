@@ -17,41 +17,74 @@
                         Fresh <span class="accsent">Harvest</span> Box has got you covered
                     </h1>
                     <p class="contacts-text">Our boxes are packed with delicious, nutritious vegetables, perfect for anyone looking to eat healthier or support local farmers. Order your box today and start enjoying the best that nature has to offer!</p>
-                    <form class="form">
-                        <p class="form-title">Ordering <span class="accsent-from">from us</span> is quick and easy! Fill out <span class="accsent-form">the form</span> below and we will contact you !</p>
-                        <div class="form-overlay">
-                            <label class="form-field" for="user-name"></label>
-                            <div class="form-input-wrapper">
-                                <input class="form-input" id="user-name" type="text" name="user-name" placeholder="Full Name"/>
-                            </div>
+                   <div class="flex">
+                    <div class="form-section">
+                        <div class="form-description">
+                          <h2>Ordering <span class="highlight">From Us</span> is Quick and Easy! Fill out <span class="accsent">the form</span> below, and we will contact you!</h2>
                         </div>
-                        <div class="form-overlay">
-                            <label class="form-field" for="user-name"></label>
-                            <div class="form-input-wrapper">
-                                <input class="form-input" id="user-email" type="email" name="user-email" placeholder="Email"/>
-                            </div>
-                        </div>
-                        <div class="form-overlay-field">
-                            <label class="form-field" for="user-comment"></label> 
-                            <textarea class="form-message" id="user-comment" name="user-comment" placeholder="Comment"></textarea>
-                        </div>
-                        <button type="submit" class="form-submit">Send</button>
-                    </form>
+                        <form class="contact-form" action="#" method="POST" novalidate>
+                            <div class="form-group">
+                                <input 
+                                  class="input-name" 
+                                  type="text" 
+                                  name="fullName" 
+                                  placeholder="Full Name" 
+                                  required>
+                              </div>
+                              <div class="form-group">
+                                <input 
+                                  class="input-email" 
+                                  type="email" 
+                                  name="email" 
+                                  placeholder="Email" 
+                                  required  
+                                  pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,})\.([A-z]{2,8})">
+                              </div>
+                              <div class="form-group">
+                                <textarea 
+                                  class="input-comment" 
+                                  name="comment" 
+                                  placeholder="Comment" 
+                                  required></textarea>
+                              </div>
+                          <button type="submit" class="submit-button">Send</button>
+                        </form>
+                    </div>
                     <div class="social">
-                        <img class="social-img" src="./images/pic mobile.jpg" width="295">
+                        <picture>
+                            <!-- Зображення для мобільних пристроїв -->
+                            <source 
+                              srcset="./images/picMobile.jpg 1x, ./images/picMobile@2x.jpg 2x" 
+                              media="(max-width: 767px)">
+                            
+                            <!-- Зображення для планшетів -->
+                            <source 
+                              srcset="./images/picTablet.jpg 1x, ./images/picTablet@2x.jpg 2x" 
+                              media="(min-width: 768px) and (max-width: 1279px)">
+                            
+                            <!-- Зображення для десктопів -->
+                            <source 
+                              srcset="./images/picDesktop.jpg 1x, ./images/picDesktop@2x.jpg 2x" 
+                              media="(min-width: 1280px)">
+                            
+                            <!-- Альтернативне зображення для старих браузерів -->
+                            <img class="social-img" src="./images/picMobile.jpg" alt="A woman in sportswear squeezing lemon juice into a bottle with fruits on a kitchen counter. 
+                        Other fruits and berries are placed around.">
+                        </picture>   
                         <p class="social-text">Follow us on our social networks:</p>
                         <ul class="social-list">
                             <li class="social-item">
-                                <a href="https://www.instagram.com/goitclub/" target="_blank">instagram /</a>
+                                <a href="https://www.instagram.com/goitclub/" target="_blank">Instagram</a>
                             </li>
                             <li class="social-item">
-                                <a href="https://www.facebook.com/goITclub/" target="_blank">facebook /</a>
+                                <a href="https://www.facebook.com/goITclub/" target="_blank">Facebook</a>
                             </li>
                             <li class="social-item">
-                                <a href="https://www.youtube.com/c/GoIT" target="_blank">youtube</a>
+                                <a href="https://www.youtube.com/c/GoIT" target="_blank">Youtube</a>
                             </li>
                         </ul>
                     </div>
+                </div>
                 </div>
             </section>
         </main>
